@@ -15,9 +15,9 @@ def main():
     try:
         with open('referat.txt', 'r', encoding='utf-8') as f:
             text = f.read()
-            print ('Длинна строки: {} симовла(ов)'.format(str(len(text))))
+            print (f'Длинна строки: {str(len(text))} симовла(ов)')
             word_count = len(text.split())
-            print ('В тексте {} слов(а)'.format(word_count))
+            print (f'В тексте {word_count} слов(а)')
         with open('referat2.txt', 'w', encoding='utf-8') as f_new:
             text = text.replace('.', '!')
             f_new.write(text)

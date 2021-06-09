@@ -11,15 +11,16 @@ from datetime import datetime, timedelta
 
 
 def print_days(date_now):
+    try:
+        dt1 = timedelta(days = 1)
+        yesterday = date_now - dt1
 
-    dt1 = timedelta(days = 1)
-    yesterday = date_now - dt1
+        dt2 = timedelta(days = 30)
+        month = date_now - dt2
 
-    dt2 = timedelta(days = 30)
-    month = date_now - dt2
-    
-    print ('Вчера: ' + str(yesterday), '\nСегодня: ' + str(date_now), '\n30 дней назад: ' + str(month))
-
+        print (f'Вчера: {yesterday},\nСегодня: {date_now},\n30 дней назад: {month}')
+    except TypeError:
+        print('Введите корректную дату')
 
 def str_2_datetime(date_string):
     date = datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
